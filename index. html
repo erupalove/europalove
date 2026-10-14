@@ -2,214 +2,228 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#e83e70">
-  <meta name="description" content="Europalove – Menschen kennenlernen und Liebe in Europa finden.">
-  <title>Europalove ❤️ – Liebe in Europa</title>
-  <style>
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      color: #302333;
-      background: #fff5f7;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 18px 6%;
-      background: white;
-      box-shadow: 0 2px 12px #0000000c;
-    }
-
-    .logo {
-      color: #e83e70;
-      font-size: 25px;
-      font-weight: bold;
-    }
-
-    nav a {
-      color: #493447;
-      text-decoration: none;
-      margin-left: 14px;
-      font-size: 14px;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 65px 20px 45px;
-      background: linear-gradient(145deg, #ffe0eb, #fff5f7, #f0e3ff);
-    }
-
-    .heart { font-size: 54px; }
-
-    h1 {
-      font-size: clamp(30px, 7vw, 48px);
-      margin: 15px 0;
-      color: #9e2857;
-    }
-
-    .hero p {
-      font-size: 17px;
-      line-height: 1.8;
-      max-width: 540px;
-      margin: 0 auto 25px;
-    }
-
-    .btn {
-      display: inline-block;
-      background: #e83e70;
-      color: white;
-      padding: 14px 24px;
-      margin: 6px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-    }
-
-    .btn-light {
-      background: white;
-      color: #b72d60;
-      border: 1px solid #e83e70;
-    }
-
-    section {
-      padding: 35px 20px;
-      text-align: center;
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-      gap: 16px;
-      max-width: 850px;
-      margin: 25px auto;
-    }
-
-    .card {
-      background: white;
-      padding: 25px 18px;
-      border-radius: 18px;
-      box-shadow: 0 5px 20px #4a18300b;
-    }
-
-    .card .emoji { font-size: 35px; }
-
-    .signup {
-      max-width: 420px;
-      margin: auto;
-      background: white;
-      padding: 25px;
-      border-radius: 18px;
-      box-shadow: 0 5px 22px #4a18300b;
-    }
-
-    input, select {
-      width: 100%;
-      padding: 13px;
-      margin: 8px 0;
-      border: 1px solid #e5d6df;
-      border-radius: 10px;
-      font-size: 16px;
-      background: white;
-    }
-
-    .signup .btn { width: 100%; }
-
-    .notice {
-      font-size: 13px;
-      color: #777;
-      line-height: 1.7;
-    }
-
-    footer {
-      text-align: center;
-      padding: 28px 15px;
-      background: white;
-      color: #777;
-      font-size: 13px;
-    }
-
-    footer a { color: #b72d60; }
-
-    @media (max-width: 420px) {
-      header { padding: 15px 12px; }
-      .logo { font-size: 21px; }
-      nav a { margin-left: 8px; font-size: 12px; }
-      .hero { padding-top: 45px; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ff477e">
+<title>Europalove ❤️ – Liebe in Europa</title>
+<style>
+:root{--pink:#ff477e;--purple:#8447e5;--dark:#29233b;--bg:#fff8fb}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:var(--dark)}
+a{text-decoration:none;color:inherit}
+button,input,select{font:inherit}
+button{cursor:pointer}
+nav{position:sticky;top:0;z-index:5;background:#fff;padding:15px 5%;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 15px #39203b0d}
+.logo{font-size:24px;font-weight:900;color:var(--pink)}
+.logo span{color:var(--purple)}
+nav a:last-child,.btn{background:linear-gradient(120deg,var(--pink),var(--purple));color:white;border:0;border-radius:30px;padding:12px 19px;font-weight:bold;display:inline-block}
+.hero{padding:55px 6%;background:linear-gradient(125deg,#ffeaf2,#f0e8ff);display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
+.hero h1{font-size:clamp(38px,5vw,62px);line-height:1.08;margin:18px 0}
+.hero h1 span{color:var(--pink)}
+.hero p{line-height:1.8;color:#70687d;font-size:17px}
+.hero img{width:100%;height:340px;object-fit:cover;border-radius:35px;box-shadow:0 18px 45px #6b397b2b}
+.section{max-width:1180px;margin:auto;padding:45px 22px}
+h2{font-size:30px;margin:0 0 10px}
+.muted{color:#888194;line-height:1.7}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin:24px 0}
+.filters input,.filters select{flex:1;min-width:160px;padding:13px;border:1px solid #eadfea;border-radius:12px;background:white}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.card{background:white;border:1px solid #f1e6ef;border-radius:20px;overflow:hidden;box-shadow:0 8px 25px #422b4b0c}
+.photo{height:245px;position:relative}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.status{position:absolute;top:10px;left:10px;background:#fff;padding:7px 10px;border-radius:20px;font-size:12px}
+.heart{position:absolute;right:10px;top:10px;border:0;background:white;color:var(--pink);border-radius:50%;width:39px;height:39px;font-size:23px}
+.heart.liked{background:var(--pink);color:white}
+.info{padding:14px}
+.info h3{margin:0 0 8px;font-size:18px}
+.city{font-size:13px;color:#81798b;margin-bottom:12px}
+.tag{display:inline-block;background:#f4edff;color:#7544be;padding:6px 9px;border-radius:8px;font-size:12px}
+.info .btn{display:block;text-align:center;margin-top:13px;padding:11px;font-size:14px}
+.banner{margin:5px 22px 45px;padding:35px 20px;border-radius:25px;text-align:center;background:linear-gradient(120deg,var(--pink),var(--purple));color:white}
+.banner p{line-height:1.7}
+.banner a{display:inline-block;padding:12px 20px;background:white;color:var(--pink);border-radius:25px;font-weight:bold}
+.signup{max-width:480px;margin:20px auto;background:white;padding:25px;border-radius:20px;border:1px solid #f0e3ef}
+.signup label{display:block;margin:15px 0 7px;font-weight:bold;font-size:14px}
+.signup input,.signup select{width:100%;padding:13px;border:1px solid #e9dfeb;border-radius:10px}
+.signup button{width:100%;margin-top:18px}
+.notice{font-size:12px;color:#8a8291;line-height:1.6}
+#message{display:none;padding:12px;background:#fff0f5;color:#a52e5b;border-radius:10px;line-height:1.6;margin-top:12px}
+footer{text-align:center;padding:25px;background:white;color:#888194;font-size:13px;line-height:2}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{grid-template-columns:1fr .8fr}.photo{height:260px}}
+@media(max-width:560px){nav{padding:13px 15px}.logo{font-size:21px}nav a:last-child{font-size:12px;padding:10px}.hero{grid-template-columns:1fr;text-align:center;padding:35px 18px}.hero img{height:270px}.hero p{font-size:15px}.section{padding:35px 14px}h2{font-size:26px}.grid{gap:10px}.photo{height:195px}.info{padding:10px}.info h3{font-size:15px}.city{font-size:12px}.info .btn{font-size:12px;padding:10px 5px}.heart{width:34px;height:34px}.banner{margin:0 14px 35px;padding:28px 16px}}
+</style>
 </head>
 <body>
-  <header>
-    <div class="logo">❤️ Europalove</div>
-    <nav>
-      <a href="#features">Über uns</a>
-      <a href="#register">Registrieren</a>
-    </nav>
-  </header>
 
-  <main>
-    <div class="hero">
-      <div class="heart">💗</div>
-      <h1>Finde deine Liebe in Europa</h1>
-      <p>
-        Lerne neue Menschen kennen, entdecke gemeinsame Interessen
-        und beginne deine eigene Liebesgeschichte.
-      </p>
-      <a class="btn" href="#register">Jetzt entdecken</a>
-      <a class="btn btn-light" href="#register">Mitmachen</a>
-    </div>
+<nav>
+  <a class="logo" href="#home">Euro<span>palove</span> ❤️</a>
+  <a href="#signup">Jetzt anmelden</a>
+</nav>
 
-    <section id="features">
-      <h2>Deine Geschichte beginnt hier</h2>
-      <div class="features">
-        <div class="card">
-          <div class="emoji">🌍</div>
-          <h3>Menschen in Europa</h3>
-          <p>Entdecke neue Kontakte aus verschiedenen Ländern.</p>
-        </div>
-        <div class="card">
-          <div class="emoji">💬</div>
-          <h3>Gemeinsamkeiten</h3>
-          <p>Finde Menschen mit ähnlichen Interessen.</p>
-        </div>
-        <div class="card">
-          <div class="emoji">❤️</div>
-          <h3>Echte Verbindungen</h3>
-          <p>Vielleicht beginnt hier deine große Liebe.</p>
-        </div>
+<main>
+<section class="hero" id="home">
+  <div>
+    <p>💗 Neue Menschen. Neue Chancen.</p>
+    <h1>Finde deine <span>Liebe in Europa.</span></h1>
+    <p>Lerne interessante Menschen kennen, entdecke neue Verbindungen und vielleicht findest du hier deine besondere Liebe.</p>
+    <a class="btn" href="#profiles">💕 Profile entdecken</a>
+  </div>
+  <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=900&q=85" alt="Paar gemeinsam">
+</section>
+
+<section class="section" id="profiles">
+  <h2>Entdecke neue Profile 💖</h2>
+  <p class="muted">Finde Menschen, die zu dir passen könnten.</p>
+  <div class="filters">
+    <input id="search" type="search" placeholder="🔎 Name suchen">
+    <select id="city">
+      <option value="">Alle Städte</option>
+      <option>Berlin</option><option>Hamburg</option><option>Paris</option>
+      <option>Amsterdam</option><option>Rom</option><option>Wien</option>
+    </select>
+  </div>
+
+  <div class="grid" id="grid">
+    <article class="card" data-name="sophia" data-city="Berlin">
+      <div class="photo">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Beispielfoto Sophia">
+        <span class="status">● Online</span><button class="heart" aria-label="Gefällt mir" aria-pressed="false">♡</button>
       </div>
-    </section>
+      <div class="info"><h3>Sophia, 28</h3><div class="city">📍 Berlin, Deutschland</div><span class="tag">Reisen ✈️</span><a class="btn" href="#signup">Profil entdecken</a></div>
+    </article>
 
-    <section id="register">
-      <h2>Willkommen bei Europalove</h2>
-      <p>Dein nächstes Kapitel beginnt mit einem Hallo.</p>
-      <div class="signup">
-        <h3>✨ Bald kannst du dabei sein</h3>
-        <p>
-          Die Registrierung und Anmeldung werden im nächsten
-          Entwicklungsschritt mit Supabase verbunden.
-        </p>
-        <p class="notice">
-          Dies ist zunächst die Startseite. Noch werden keine
-          Konten erstellt oder Daten gespeichert.
-        </p>
+    <article class="card" data-name="emma" data-city="Hamburg">
+      <div class="photo">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80" alt="Beispielfoto Emma">
+        <span class="status">● Online</span><button class="heart" aria-label="Gefällt mir" aria-pressed="false">♡</button>
       </div>
-    </section>
-  </main>
+      <div class="info"><h3>Emma, 26</h3><div class="city">📍 Hamburg, Deutschland</div><span class="tag">Musik 🎵</span><a class="btn" href="#signup">Profil entdecken</a></div>
+    </article>
 
-  <footer>
-    <p>© 2026 Europalove ❤️</p>
-    <p>Mit Respekt, Sicherheit und Vertrauen neue Menschen kennenlernen.</p>
-    <p>Impressum und Datenschutz müssen vor dem öffentlichen Betrieb ergänzt werden.</p>
-  </footer>
+    <article class="card" data-name="amelia" data-city="Paris">
+      <div class="photo">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=600&q=80" alt="Beispielfoto Amelia">
+        <span class="status">● Online</span><button class="heart" aria-label="Gefällt mir" aria-pressed="false">♡</button>
+      </div>
+      <div class="info"><h3>Amelia, 29</h3><div class="city">📍 Paris, Frankreich</div><span class="tag">Kunst 🎨</span><a class="btn" href="#signup">Profil entdecken</a></div>
+    </article>
+
+    <article class="card" data-name="mia" data-city="Amsterdam">
+      <div class="photo">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1526510747491-58f928ec870f?auto=format&fit=crop&w=600&q=80" alt="Beispielfoto Mia">
+        <span class="status">● Online</span><button class="heart" aria-label="Gefällt mir" aria-pressed="false">♡</button>
+      </div>
+      <div class="info"><h3>Mia, 27</h3><div class="city">📍 Amsterdam, Niederlande</div><span class="tag">Natur 🌿</span><a class="btn" href="#signup">Profil entdecken</a></div>
+    </article>
+
+    <article class="card" data-name="lucia" data-city="Rom">
+      <div class="photo">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80" alt="Beispielfoto Lucia">
+        <span class="status">● Online</span><button class="heart" aria-label="Gefällt mir" aria-pressed="false">♡</button>
+      </div>
+      <div class="info"><h3>Lucia, 30</h3><div class="city">📍 Rom, Italien</div><span class="tag">Kochen 🍝</span><a class="btn" href="#signup">Profil entdecken</a></div>
+    </article>
+
+    <article class="card" data-name="anna" data-city="Wien">
+      <div class="photo">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=600&q=80" alt="Beispielfoto Anna">
+        <span class="status">● Online</span><button class="heart" aria-label="Gefällt mir" aria-pressed="false">♡</button>
+      </div>
+      <div class="info"><h3>Anna, 25</h3><div class="city">📍 Wien, Österreich</div><span class="tag">Reisen ✈️</span><a class="btn" href="#signup">Profil entdecken</a></div>
+    </article>
+
+    <article class="card" data-name="elena" data-city="Berlin">
+      <div class="photo">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80" alt="Beispielfoto Alex">
+        <span class="status">● Online</span><button class="heart" aria-label="Gefällt mir" aria-pressed="false">♡</button>
+      </div>
+      <div class="info"><h3>Alex, 31</h3><div class="city">📍 Berlin, Deutschland</div><span class="tag">Sport 🏃</span><a class="btn" href="#signup">Profil entdecken</a></div>
+    </article>
+
+    <article class="card" data-name="noah" data-city="Hamburg">
+      <div class="photo">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80" alt="Beispielfoto Noah">
+        <span class="status">● Online</span><button class="heart" aria-label="Gefällt mir" aria-pressed="false">♡</button>
+      </div>
+      <div class="info"><h3>Noah, 29</h3><div class="city">📍 Hamburg, Deutschland</div><span class="tag">Musik 🎸</span><a class="btn" href="#signup">Profil entdecken</a></div>
+    </article>
+  </div>
+  <p id="empty" class="muted" style="display:none">Keine Profile gefunden. Versuche eine andere Suche.</p>
+</section>
+
+<section class="banner" id="about">
+  <h2>Deine nächste Begegnung beginnt hier 💌</h2>
+  <p>Entdecke neue Menschen und mache den ersten Schritt.</p>
+  <a href="#signup">Jetzt kennenlernen</a>
+</section>
+
+<section class="section" id="signup">
+  <div class="signup">
+    <h2>Werde Teil von Europalove ❤️</h2>
+    <p class="muted">Starte deine Reise zu neuen Begegnungen.</p>
+    <form id="form">
+      <label for="name">Dein Name</label>
+      <input id="name" required maxlength="60" placeholder="Vorname">
+      <label for="email">Deine E-Mail</label>
+      <input id="email" type="email" required placeholder="name@example.com">
+      <label for="gender">Ich bin</label>
+      <select id="gender" required>
+        <option value="">Bitte auswählen</option>
+        <option>Frau</option><option>Mann</option><option>Andere</option>
+      </select>
+      <button class="btn" type="submit">Kostenlos starten 💕</button>
+      <div id="message" role="status"></div>
+    </form>
+    <p class="notice">Demo-Formular: Diese Seite speichert oder versendet deine Angaben noch nicht. Bitte verwende hier keine echten persönlichen Daten.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <strong>Europalove ❤️</strong><br>
+  Gemeinsam neue Verbindungen entdecken.
+  <div><a href="#home">Startseite</a> · <a href="#about">Über uns</a> · <a href="#signup">Kontakt</a></div>
+  <p>© 2026 Europalove. Alle Rechte vorbehalten.</p>
+</footer>
+
+<script>
+const search = document.getElementById('search');
+const city = document.getElementById('city');
+const cards = [...document.querySelectorAll('.card')];
+
+function filterProfiles() {
+  const term = search.value.trim().toLowerCase();
+  const selectedCity = city.value;
+  let shown = 0;
+
+  cards.forEach(card => {
+    const matchesName = card.dataset.name.includes(term);
+    const matchesCity = !selectedCity || card.dataset.city === selectedCity;
+    const visible = matchesName && matchesCity;
+    card.style.display = visible ? '' : 'none';
+    if (visible) shown++;
+  });
+
+  document.getElementById('empty').style.display = shown ? 'none' : 'block';
+}
+search.addEventListener('input', filterProfiles);
+city.addEventListener('change', filterProfiles);
+
+document.querySelectorAll('.heart').forEach(button => {
+  button.addEventListener('click', () => {
+    const liked = button.classList.toggle('liked');
+    button.textContent = liked ? '♥' : '♡';
+    button.setAttribute('aria-pressed', String(liked));
+  });
+});
+
+document.getElementById('form').addEventListener('submit', event => {
+  event.preventDefault();
+  const message = document.getElementById('message');
+  message.style.display = 'block';
+  message.textContent = 'Dies ist derzeit nur eine Design-Demo. Die echte Registrierung muss noch eingerichtet werden.';
+});
+</script>
 </body>
 </html>
 
