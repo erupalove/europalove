@@ -1,27 +1,198 @@
-"<!DOCTYPE html>"
-"<html lang="en">"
-"<head>"
-"  <meta charset="UTF-8">"
-"  <meta name="viewport" content="width=device-width, initial-scale=1.0">"
-"  <title>Europe Love</title>"
-"  <style>"
-"    body { font-family: Arial, sans-serif; text-align: center; background: #fff0f5; margin: 0; color: #333; }"
-"    header { background: #c2185b; color: white; padding: 30px 15px; }"
-"    h1 { margin: 0; font-size: 34px; }"
-"    main { padding: 35px 20px; }"
-"    .card { background: white; padding: 25px; border-radius: 16px; max-width: 450px; margin: 20px auto; box-shadow: 0 4px 15px #ddd; }"
-"    a { display: inline-block; background: #c2185b; color: white; padding: 12px 24px; border-radius: 25px; text-decoration: none; }"
-"  </style>"
-"</head>"
-"<body>"
-"  <header><h1>❤️ Europe Love</h1><p>Find Love Across Europe</p></header>"
-"  <main>"
-"    <div class="card">"
-"      <h2>Welcome to Europe Love</h2>"
-"      <p>A place to meet new people and discover meaningful connections.</p>"
-"      <p>Love, Friendship & New Beginnings</p>"
-"      <a href="mailto:hello@europalove.com">Contact Us</a>"
-"    </div>"
-"  </main>"
-"</body>"
-"</html>"
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Europe Love ❤️</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #34212b;
+  background: #fff7fa;
+}
+header {
+  background: white;
+  padding: 20px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-size: 23px;
+  font-weight: bold;
+  color: #c2185b;
+}
+nav a {
+  margin-left: 14px;
+  text-decoration: none;
+  color: #553545;
+}
+.btn {
+  display: inline-block;
+  background: #c2185b;
+  color: white;
+  padding: 13px 22px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.hero {
+  padding: 65px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  background: linear-gradient(135deg,#fff0f5,#ffdce9);
+}
+.hero-content {
+  max-width: 600px;
+}
+.hero h1 {
+  font-size: clamp(38px,6vw,62px);
+  line-height: 1.1;
+  color: #a3154b;
+}
+.hero p {
+  font-size: 18px;
+  line-height: 1.7;
+}
+.heart {
+  font-size: 120px;
+  text-align: center;
+}
+section {
+  padding: 45px 6%;
+  text-align: center;
+}
+.cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 18px;
+  width: 230px;
+  box-shadow: 0 5px 20px #ead6df;
+}
+.icon {
+  font-size: 55px;
+}
+.card h3 {
+  color: #a3154b;
+}
+.muted {
+  color: #806b76;
+  line-height: 1.6;
+}
+footer {
+  text-align: center;
+  padding: 25px;
+  background: #402032;
+  color: white;
+}
+@media(max-width:600px) {
+  header {
+    padding: 18px 5%;
+  }
+  nav a:not(.btn) {
+    display: none;
+  }
+  .hero {
+    padding: 40px 6%;
+    flex-direction: column;
+    text-align: center;
+  }
+  .heart {
+    font-size: 90px;
+  }
+  .card {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">❤️ Europe Love</div>
+  <nav>
+    <a href="#discover">Discover</a>
+    <a href="#about">About</a>
+    <a class="btn" href="#join">Join us</a>
+  </nav>
+</header>
+
+<div class="hero" id="join">
+  <div class="hero-content">
+    <p>❤️ LOVE KNOWS NO BORDERS</p>
+    <h1>Find Your Love Across Europe</h1>
+    <p>
+      Meaningful connections start here.
+      Meet new people, share your story,
+      and discover the possibility of love.
+    </p>
+    <a class="btn" href="mailto:hello@europalove.com">
+      Join Europe Love ❤️
+    </a>
+  </div>
+  <div class="heart">💗🌍</div>
+</div>
+
+<section id="discover">
+  <h2>Every Great Love Starts Somewhere</h2>
+  <p class="muted">
+    Discover new possibilities across Europe.
+  </p>
+
+  <div class="cards">
+    <div class="card">
+      <div class="icon">🌷</div>
+      <h3>Meet Someone</h3>
+      <p class="muted">
+        Make a meaningful connection.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">💌</div>
+      <h3>Share Your Story</h3>
+      <p class="muted">
+        Show the world who you are.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🌍</div>
+      <h3>Explore Europe</h3>
+      <p class="muted">
+        Love can begin anywhere.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <h2>A Place for Real Connections</h2>
+  <p class="muted">
+    Be kind. Be yourself.
+    Respect everyone's privacy.
+  </p>
+</section>
+
+<footer>
+  ❤️ Europe Love · Love, Respect & Connection
+</footer>
+
+</body>
+</html>
