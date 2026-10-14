@@ -4,69 +4,212 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Europalove ❤️</title>
-  <meta name="description" content="Europalove – Menschen in Europa kennenlernen.">
+  <meta name="theme-color" content="#e83e70">
+  <meta name="description" content="Europalove – Menschen kennenlernen und Liebe in Europa finden.">
+  <title>Europalove ❤️ – Liebe in Europa</title>
   <style>
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #fff5f7;
       color: #302333;
-      text-align: center;
+      background: #fff5f7;
     }
+
     header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 6%;
       background: white;
-      padding: 20px;
-      font-size: 28px;
-      font-weight: bold;
-      color: #e83e70;
+      box-shadow: 0 2px 12px #0000000c;
     }
-    main { padding: 55px 20px; }
-    h1 { font-size: 36px; }
-    p { line-height: 1.8; }
+
+    .logo {
+      color: #e83e70;
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: #493447;
+      text-decoration: none;
+      margin-left: 14px;
+      font-size: 14px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 65px 20px 45px;
+      background: linear-gradient(145deg, #ffe0eb, #fff5f7, #f0e3ff);
+    }
+
+    .heart { font-size: 54px; }
+
+    h1 {
+      font-size: clamp(30px, 7vw, 48px);
+      margin: 15px 0;
+      color: #9e2857;
+    }
+
+    .hero p {
+      font-size: 17px;
+      line-height: 1.8;
+      max-width: 540px;
+      margin: 0 auto 25px;
+    }
+
     .btn {
       display: inline-block;
-      margin: 10px;
-      padding: 14px 25px;
-      border-radius: 30px;
       background: #e83e70;
       color: white;
+      padding: 14px 24px;
+      margin: 6px;
+      border-radius: 30px;
       text-decoration: none;
       font-weight: bold;
+      border: none;
+      cursor: pointer;
     }
-    .secondary { background: #633b83; }
-    .features {
+
+    .btn-light {
       background: white;
+      color: #b72d60;
+      border: 1px solid #e83e70;
+    }
+
+    section {
+      padding: 35px 20px;
+      text-align: center;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 16px;
+      max-width: 850px;
       margin: 25px auto;
+    }
+
+    .card {
+      background: white;
+      padding: 25px 18px;
+      border-radius: 18px;
+      box-shadow: 0 5px 20px #4a18300b;
+    }
+
+    .card .emoji { font-size: 35px; }
+
+    .signup {
+      max-width: 420px;
+      margin: auto;
+      background: white;
       padding: 25px;
       border-radius: 18px;
-      max-width: 500px;
+      box-shadow: 0 5px 22px #4a18300b;
     }
-    footer { padding: 25px; color: #777; }
+
+    input, select {
+      width: 100%;
+      padding: 13px;
+      margin: 8px 0;
+      border: 1px solid #e5d6df;
+      border-radius: 10px;
+      font-size: 16px;
+      background: white;
+    }
+
+    .signup .btn { width: 100%; }
+
+    .notice {
+      font-size: 13px;
+      color: #777;
+      line-height: 1.7;
+    }
+
+    footer {
+      text-align: center;
+      padding: 28px 15px;
+      background: white;
+      color: #777;
+      font-size: 13px;
+    }
+
+    footer a { color: #b72d60; }
+
+    @media (max-width: 420px) {
+      header { padding: 15px 12px; }
+      .logo { font-size: 21px; }
+      nav a { margin-left: 8px; font-size: 12px; }
+      .hero { padding-top: 45px; }
+    }
   </style>
 </head>
 <body>
-  <header>❤️ Europalove</header>
+  <header>
+    <div class="logo">❤️ Europalove</div>
+    <nav>
+      <a href="#features">Über uns</a>
+      <a href="#register">Registrieren</a>
+    </nav>
+  </header>
+
   <main>
-    <h1>Finde deine Liebe in Europa</h1>
-    <p>Lerne neue Menschen kennen und entdecke echte Verbindungen.</p>
-    <a class="btn" href="#registrieren">Jetzt starten</a>
-    <a class="btn secondary" href="#anmelden">Anmelden</a>
-    <section class="features">
-      <h2>Deine Geschichte beginnt hier 💕</h2>
-      <p>Neue Menschen kennenlernen, Freundschaften schließen und vielleicht die große Liebe finden.</p>
+    <div class="hero">
+      <div class="heart">💗</div>
+      <h1>Finde deine Liebe in Europa</h1>
+      <p>
+        Lerne neue Menschen kennen, entdecke gemeinsame Interessen
+        und beginne deine eigene Liebesgeschichte.
+      </p>
+      <a class="btn" href="#register">Jetzt entdecken</a>
+      <a class="btn btn-light" href="#register">Mitmachen</a>
+    </div>
+
+    <section id="features">
+      <h2>Deine Geschichte beginnt hier</h2>
+      <div class="features">
+        <div class="card">
+          <div class="emoji">🌍</div>
+          <h3>Menschen in Europa</h3>
+          <p>Entdecke neue Kontakte aus verschiedenen Ländern.</p>
+        </div>
+        <div class="card">
+          <div class="emoji">💬</div>
+          <h3>Gemeinsamkeiten</h3>
+          <p>Finde Menschen mit ähnlichen Interessen.</p>
+        </div>
+        <div class="card">
+          <div class="emoji">❤️</div>
+          <h3>Echte Verbindungen</h3>
+          <p>Vielleicht beginnt hier deine große Liebe.</p>
+        </div>
+      </div>
     </section>
-    <section id="registrieren">
-      <h2>Werde Teil von Europalove</h2>
-      <p>Die Registrierung wird als nächster Schritt eingerichtet.</p>
-    </section>
-    <section id="anmelden">
-      <h2>Willkommen zurück!</h2>
-      <p>Die Anmeldung wird als nächster Schritt eingerichtet.</p>
+
+    <section id="register">
+      <h2>Willkommen bei Europalove</h2>
+      <p>Dein nächstes Kapitel beginnt mit einem Hallo.</p>
+      <div class="signup">
+        <h3>✨ Bald kannst du dabei sein</h3>
+        <p>
+          Die Registrierung und Anmeldung werden im nächsten
+          Entwicklungsschritt mit Supabase verbunden.
+        </p>
+        <p class="notice">
+          Dies ist zunächst die Startseite. Noch werden keine
+          Konten erstellt oder Daten gespeichert.
+        </p>
+      </div>
     </section>
   </main>
-  <footer>© 2026 Europalove</footer>
+
+  <footer>
+    <p>© 2026 Europalove ❤️</p>
+    <p>Mit Respekt, Sicherheit und Vertrauen neue Menschen kennenlernen.</p>
+    <p>Impressum und Datenschutz müssen vor dem öffentlichen Betrieb ergänzt werden.</p>
+  </footer>
 </body>
 </html>
 
