@@ -225,7 +225,90 @@ document.getElementById('form').addEventListener('submit', event => {
   message.style.display = 'block';
   message.textContent = 'Dies ist derzeit nur eine Design-Demo. Die echte Registrierung muss noch eingerichtet werden.';
 });
+
+</body><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const SUPABASE_URL = 'https://smbjtfzroqpljomjskzb.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_NM802EZWaVGYTIc62Dcbgw_OMT-Iyva';
+
+const supabaseClient = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_KEY
+);
+
+const search = document.getElementById('search');
+const city = document.getElementById('city');
+const cards = [...document.querySelectorAll('.card')];
+
+function filterProfiles() {
+  const term = search.value.trim().toLowerCase();
+  const selectedCity = city.value;
+  let shown = 0;
+
+  cards.forEach(card => {
+    const matchesName = card.dataset.name.includes(term);
+    const matchesCity = !selectedCity ||
+      card.dataset.city === selectedCity;
+    const visible = matchesName && matchesCity;
+    card.style.display = visible ? '' : 'none';
+    if (visible) shown++;
+  });
+
+  document.getElementById('empty').style.display =
+    shown ? 'none' : 'block';
+}
+
+search.addEventListener('input', filterProfiles);
+city.addEventListener('change', filterProfiles);
+
+document.querySelectorAll('.heart').forEach(button => {
+  button.addEventListener('click', () => {
+    const liked = button.classList.toggle('liked');
+    button.textContent = liked ? '♥' : '♡';
+    button.setAttribute('aria-pressed', String(liked));
+  });
+});
+
+document.getElementById('form').addEventListener('submit', async event => {
+  event.preventDefault();
+
+  const message = document.getElementById('message');
+  const submitButton = event.currentTarget.querySelector(
+    'button[type="submit"]'
+  );
+
+  message.style.display = 'block';
+  message.textContent = 'Registrierung läuft ...';
+  submitButton.disabled = true;
+
+  try {
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value;
+    const gender = document.getElementById('gender').value;
+
+    const { data, error } = await supabaseClient.auth.signUp({
+      email,
+      password,
+      options: {
+        data: { full_name: name, gender },
+        emailRedirectTo: window.location.origin +
+          window.location.pathname
+      }
+    });
+
+    if (error) throw error;
+
+    message.textContent = data.session
+      ? 'Registrierung erfolgreich! Du bist jetzt angemeldet.'
+      : 'Bitte prüfe deine E-Mails und bestätige deine Registrierung.';
+  } catch (error) {
+    message.textContent =
+      'Registrierung fehlgeschlagen: ' + error.message;
+  } finally {
+    submitButton.disabled = false;
+  }
+});
 </script>
-</body>
 </html>
 
