@@ -166,6 +166,8 @@ footer{text-align:center;padding:25px;background:white;color:#888194;font-size:1
       <input id="name" required maxlength="60" placeholder="Vorname">
       <label for="email">Deine E-Mail</label>
       <input id="email" type="email" required placeholder="name@example.com">
+<label for="password">Dein Passwort</label>
+<input id="password" type="password" required minlength="8" autocomplete="new-password" placeholder="Mindestens 8 Zeichen">
       <label for="gender">Ich bin</label>
       <select id="gender" required>
         <option value="">Bitte auswählen</option>
